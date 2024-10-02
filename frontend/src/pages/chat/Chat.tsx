@@ -10,6 +10,10 @@ import { isEmpty } from 'lodash'
 import DOMPurify from 'dompurify'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import FileUpload from './components/FileUpload';
+
+// Add FileUpload where appropriate in your layout
+<FileUpload />
 
 import styles from './Chat.module.css'
 import Contoso from '../../assets/Contoso.svg'
