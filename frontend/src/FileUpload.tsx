@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { IconButton } from '@fluentui/react/lib/Button';
+import { IIconProps } from '@fluentui/react/lib/Icon';
+
+const paperclipIcon: IIconProps = { iconName: 'Attach' };
 
 const FileUpload = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -28,7 +32,15 @@ const FileUpload = () => {
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
+      <input
+        type="file"
+        onChange={handleFileChange}
+        style={{ display: 'none' }}
+        id="fileUpload"
+      />
+      <label htmlFor="fileUpload">
+        <IconButton iconProps={paperclipIcon} ariaLabel="Attach File" />
+      </label>
       <button onClick={handleUpload}>Upload</button>
     </div>
   );
